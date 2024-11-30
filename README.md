@@ -1,32 +1,111 @@
-# Hugging Face API Document Summarizer (MATLAB Application)
+Here is a sample `README.md` file for your MATLAB Document Summarizer program that leverages the Hugging Face API for efficient text processing:
 
-This MATLAB application demonstrates how to download, process, and summarize long documents using the Hugging Face API. The application is divided into several steps:
+---
 
-## Steps
+# MATLAB Document Summarizer: Leveraging Hugging Face API for Efficient Text Processing
 
-### 1. Read an HTML File
-The code fetches a document from a URL (e.g., from Project Gutenberg or arXiv) and extracts the plain text from the HTML format.
+This MATLAB application demonstrates how to download, process, and summarize long documents using the Hugging Face API. It is designed to handle large documents by splitting them into manageable chunks and summarizing each chunk individually. The final result is a cohesive summary of the entire document.
 
-### 2. User Settings
-Users need to provide their Hugging Face API key and define the maximum chunk size for splitting the document.
+## Features
+- Downloads and processes HTML content from a given URL (e.g., Project Gutenberg or arXiv).
+- Extracts plain text from HTML format for text summarization.
+- Splits long documents into smaller chunks for efficient processing by the Hugging Face API.
+- Summarizes each chunk using the Hugging Face API (e.g., using the `google/pegasus-xsum` model).
+- Combines all the summarized chunks into a final, cohesive summary.
 
-### 3. Helper Functions
+## Prerequisites
+- MATLAB (version 2021 or later is recommended).
+- Hugging Face API key (for using Hugging Face models).
+- A text file containing your Hugging Face API key (`API_KEY.txt`).
 
-- **`summarizeTextHuggingFace`**: A function that uses the Hugging Face API to summarize text. It sends the text to a specified model (e.g., `pegasus-xsum`) and returns the summary.
-  
-- **`createChunks`**: A function that splits long text into manageable chunks, each with a defined character limit, to ensure that each chunk can be processed by the summarization API.
+## Setup Instructions
 
-### 4. Download and Preprocess the Long Document
-The application fetches the document from the specified URL and extracts the plain text from the HTML content.
+### 1. Obtain a Hugging Face API Key
+- Visit [Hugging Face API Token page](https://huggingface.co/settings/tokens) and generate your API key.
+- Save your API key in a text file named `API_KEY.txt` in the same directory as the MATLAB script.
 
-### 5. Split Long Text into Chunks
-The long text is divided into smaller chunks, each with a specified maximum character count, making it easier to summarize.
+### 2. Set Up Your MATLAB Script
+1. Clone or download the repository.
+2. Open MATLAB and navigate to the folder containing the script.
+3. Ensure that the `API_KEY.txt` file is in the same directory as the script.
+4. Set the URL of the document you want to summarize.
 
-### 6. Summarize Each Chunk
-The application iterates over the chunks and sends them to the Hugging Face API for summarization, with a pause between requests to prevent overloading the server and triggering errors (e.g., 503 errors due to rate limits).
+### 3. Modify User Settings
+In the script, define your Hugging Face API key and set the maximum chunk size for text processing.
 
-### 7. Combine Final Summary
-After each chunk is summarized, the individual summaries are joined to create a final cohesive summary of the entire document.
+```matlab
+% Set the document URL (replace with your desired document)
+url = "https://arxiv.org/html/2403.16070v1";  % Example URL
 
-## Conclusion
-This approach ensures that even large documents can be effectively processed and summarized in manageable portions, leveraging the power of the Hugging Face API within MATLAB.
+% Set the maximum chunk size (number of characters per chunk)
+chunkSize = 3000;  % Adjust as needed
+
+% Load your Hugging Face API key
+fileID = fopen('API_KEY.txt', 'r');
+apiKey = strtrim(fgets(fileID));
+fclose(fileID);
+
+disp(['API Key successfully loaded: ', apiKey]);  % For debugging purposes
+```
+
+### 4. Running the Application
+Once you have set up the script and defined the document URL and chunk size, run the MATLAB script. The application will:
+- Download the document from the URL.
+- Extract plain text from the HTML content.
+- Split the document into manageable chunks.
+- Summarize each chunk using the Hugging Face API.
+- Combine the individual summaries into a final cohesive summary.
+
+### 5. Customizing the Model
+The default model used for summarization is `google/pegasus-xsum`, but you can modify the `summarizeTextHuggingFace` function to use a different Hugging Face model if needed.
+
+```matlab
+url = "https://api-inference.huggingface.co/models/google/pegasus-xsum";  % Default model URL
+```
+
+You can replace `google/pegasus-xsum` with another available model of your choice.
+
+### 6. Handling Rate Limits
+To avoid triggering rate limits (e.g., 503 errors) when making requests to the Hugging Face API, the script pauses for 5 seconds between each request. You can adjust this pause time by modifying the `pauseBetweenRequests` variable.
+
+```matlab
+pauseBetweenRequests = 5;  % Adjust the wait time between requests as needed
+```
+
+## Functions
+
+### `summarizeTextHuggingFace(apiKey, text)`
+This function uses the Hugging Face API to summarize the input text. It sends the text to the specified Hugging Face model and returns the summary.
+
+### `createChunks(text, chunkSize)`
+This function splits the long text into smaller chunks, each with a specified maximum character count. It tokenizes the input text into sentences and groups them into manageable chunks.
+
+## Example Use Case
+1. Download and extract the text of a long document (e.g., a research paper or book) from a URL.
+2. Split the document into chunks of manageable size.
+3. Summarize each chunk using the Hugging Face API.
+4. Combine the summaries to generate a final, concise summary of the entire document.
+
+## Example Output
+After running the script, the final summary will be displayed in the MATLAB command window.
+
+```matlab
+Final Summary:
+[Summary of the entire document goes here]
+```
+
+## Troubleshooting
+- **"API_KEY.txt file not found" error**: Ensure that the `API_KEY.txt` file is in the same directory as the MATLAB script, and that it contains a valid Hugging Face API key.
+- **503 error or rate limit exceeded**: Increase the pause time between requests or check Hugging Face's rate limits.
+- **Empty summary**: If a chunk cannot be summarized, the function will attempt to retry up to three times before returning an error message.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+
+## Acknowledgments
+- Hugging Face for providing powerful pre-trained models for text summarization.
+- MATLAB for offering a versatile environment for text processing and API integration.
+
+---
+
+This `README.md` provides a clear guide for setting up and running the MATLAB Document Summarizer, along with instructions for customizing the application to suit your needs.
