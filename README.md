@@ -6,11 +6,7 @@ Here is a sample `README.md` file for your MATLAB Document Summarizer program th
 
 This MATLAB application demonstrates how to download, process, and summarize long documents using the Hugging Face API. It is designed to handle large documents by splitting them into manageable chunks and summarizing each chunk individually. The final result is a cohesive summary of the entire document.
 
-You can view a demonstration of how the MATLAB Document Summarizer works by playing the following GIF:
-
-![Demo of MATLAB Document Summarizer](matlab-doc-summarizer-demo.gif)
-
-This GIF shows the process of downloading, chunking, summarizing, and combining the final summary of a document using the Hugging Face API.
+![Overall flow of Document Summarizer](entire-flow.gif)
 
 
 ## Features
@@ -100,6 +96,14 @@ After running the script, the final summary will be displayed in the MATLAB comm
 Final Summary:
 [Summary of the entire document goes here]
 ```
+
+## Demo
+You can view a demonstration of how the MATLAB Document Summarizer works by playing the following GIF:
+
+![Demo of MATLAB Document Summarizer](matlab-doc-summarizer-demo.gif)
+
+This GIF shows the process of downloading, chunking, summarizing, and combining the final summary of a document using the Hugging Face API.
+
 
 ## Troubleshooting
 - **"API_KEY.txt file not found" error**: Ensure that the `API_KEY.txt` file is in the same directory as the MATLAB script, and that it contains a valid Hugging Face API key.
