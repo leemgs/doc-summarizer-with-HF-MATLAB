@@ -6,7 +6,7 @@ Here is a sample `README.md` file for your MATLAB Document Summarizer program th
 
 This MATLAB application demonstrates how to download, process, and summarize long documents using the Hugging Face API. It is designed to handle large documents by splitting them into manageable chunks and summarizing each chunk individually. The final result is a cohesive summary of the entire document.
 
-![Overall flow of Document Summarizer](entire-flow.gif)
+![Overall flow of Document Summarizer](entire-flow.jpg)
 
 
 ## Features
