@@ -38,7 +38,7 @@ In the script, define your Hugging Face API key and set the maximum chunk size f
 
 ```matlab
 % Set the document URL (replace with your desired document)
-url = "https://arxiv.org/html/2403.16070v1";  % Example URL
+url = "https://arxiv.org/html/2403.16070v1](https://www.gutenberg.org/files/11/11-h/11-h.htm";  % Example URL
 
 % Set the maximum chunk size (number of characters per chunk)
 chunkSize = 3000;  % Adjust as needed
@@ -106,7 +106,7 @@ This GIF shows the process of downloading, chunking, summarizing, and combining 
 
 
 ## Troubleshooting
-- **"API_KEY.txt file not found" error**: Ensure that the `API_KEY.txt` file is in the same directory as the MATLAB script, and that it contains a valid Hugging Face API key.
+- **"API_KEY.txt file not found" error**: Ensure that the `API_KEY.txt` file is in the same directory as the MATLAB script, and that it contains a valid [Hugging Face API key](https://huggingface.co/settings/tokens).
 - **503 error or rate limit exceeded**: Increase the pause time between requests or check Hugging Face's rate limits.
 - **Empty summary**: If a chunk cannot be summarized, the function will attempt to retry up to three times before returning an error message.
 
