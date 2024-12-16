@@ -38,7 +38,7 @@ In the script, define your Hugging Face API key and set the maximum chunk size f
 
 ```matlab
 % Set the document URL (replace with your desired document)
-url = "https://arxiv.org/html/2403.16070v1](https://www.gutenberg.org/files/11/11-h/11-h.htm";  % Example URL
+url = "https://www.gutenberg.org/files/11/11-h/11-h.htm";
 
 % Set the maximum chunk size (number of characters per chunk)
 chunkSize = 3000;  % Adjust as needed
