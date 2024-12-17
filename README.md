@@ -1,4 +1,3 @@
-Here is a sample `README.md` file for your MATLAB Document Summarizer program that leverages the Hugging Face API for efficient text processing:
 
 ---
 
