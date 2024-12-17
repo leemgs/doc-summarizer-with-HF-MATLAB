@@ -1,3 +1,6 @@
+These models can be easily switched in your summarization tasks by replacing the model name in your code with any of these Hugging Face model URLs.
+![doc-llm-operation-flow.jpg](doc-llm-operation-flow.jpg)
+
 Here are 5 popular models for text summarization, including **google/pegasus-xsum**, along with their features and Hugging Face URLs:
 
 ### 1. **google/pegasus-xsum**
@@ -20,4 +23,3 @@ Here are 5 popular models for text summarization, including **google/pegasus-xsu
    - **Feature**: An enhanced version of the Pegasus model, fine-tuned on multiple datasets for high-quality abstractive summarization. It generates high-level summaries and is especially effective for long documents.
    - **Hugging Face URL**: [google/pegasus-large](https://huggingface.co/google/pegasus-large)
 
-These models can be easily switched in your summarization tasks by replacing the model name in your code with any of these Hugging Face model URLs.
