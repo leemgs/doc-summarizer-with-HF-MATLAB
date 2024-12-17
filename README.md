@@ -132,4 +132,3 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 
 ---
 
-This `README.md` provides a clear guide for setting up and running the MATLAB Document Summarizer, along with instructions for customizing the application to suit your needs.
