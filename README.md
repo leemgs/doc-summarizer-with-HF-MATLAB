@@ -59,7 +59,7 @@ Once you have set up the script and defined the document URL and chunk size, run
 - Combine the individual summaries into a final cohesive summary.
 
 ### 5. Customizing the Model
-The default model used for summarization is `google/pegasus-xsum`, but you can modify the `summarizeTextHuggingFace` function to use a different Hugging Face model if needed. Please, refer to the [model](model) folder for more details.
+The default model used for summarization is `google/pegasus-xsum`, but you can modify the `summarizeTextHuggingFace` function to use a different Hugging Face model if needed. Please, refer to the [models](models) folder for more details.
 
 ```matlab
 url = "https://api-inference.huggingface.co/models/google/pegasus-xsum";  % Default model URL
