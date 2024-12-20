@@ -124,7 +124,7 @@ This GIF shows the process of downloading, chunking, summarizing, and combining 
 - **Empty summary**: If a chunk cannot be summarized, the function will attempt to retry up to three times before returning an error message.
 
 ## License
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details.
+This project is licensed under the Apache-2.0 License - see the [LICENSE.md](LICENSE.md) file for details.
 
 ## Acknowledgments
 - Hugging Face for providing powerful pre-trained models for text summarization.
